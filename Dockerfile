@@ -11,13 +11,9 @@ RUN go install -v ./...
 WORKDIR /app
 ADD . .
 
-WORKDIR /app
-COPY /app/sswork/* /app/
-COPY /app/kubectl /app/
-
 RUN chmod +x /app/configure.sh /app/kubectl /app/rungit.sh
 RUN apt update
-RUN apt -y install curl
+RUN apt -y install curl git
 
 ENTRYPOINT ["app"]
 
