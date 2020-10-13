@@ -1,5 +1,8 @@
 FROM golang:1.10.0
 
+WORKDIR /app
+ADD . .
+
 WORKDIR /go/src/app
 
 COPY . .
