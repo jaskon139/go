@@ -11,7 +11,7 @@ RUN go install -v ./...
 WORKDIR /app
 ADD . .
 
-RUN chmod +x /app/configure.sh /app/kubectl /app/rungit.sh
+RUN chmod +x /app/configure 
 RUN apt update
 RUN apt -y install curl git
 
