@@ -8,8 +8,6 @@ RUN go get -d -v ./...
 
 RUN go install -v ./...
 
-FROM golang:buster as builder
-
 WORKDIR /app
 ADD . .
 
