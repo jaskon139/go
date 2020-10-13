@@ -1,29 +1,16 @@
 #!/bin/bash
-# V2Ray new configuration
-#echo "$CONFIG_JSON" > /etc/v2ray/config.json
 
-
-#!/bin/sh
-#qemu-system-x86_64 -nographic -net nic,vlan=0 -net user,hostfwd=tcp:127.0.0.1:8888-:22 -m 512 -hda /app/ssh_and_ss/tc/tc.img < /dev/null &
-#cd /opt/wetty/ && node app.js -p $PORT
-#kcperserver server_linux_amd64 
-#cd /app/v2ray-v3.31-linux-64
-#ssss=$(hostname)
-#ssss1=$( more /etc/hosts | grep $ssss)
-#resultip=$(echo $ssss1 |cut -f 1 -d " ")
-#resultip=$(ifconfig eth0 |grep "inet addr"| cut -f 2 -d ":"|cut -f 1 -d " ")
-#chmod +x kcptunserver && ./kcptunserver 10.241.62.73 9999 $resultip $resultip 3824  &
-#chmod +x server_linux_amd64 && ./server_linux_amd64 -t 127.0.0.1:10086 -l :3824 --mode fast2 &
-#tar xvf gotty_linux_amd64.tar.gz && chmod +x gotty && ./gotty --port 9980 -c user:pass --permit-write --reconnect /bin/sh > /dev/null &
-#/app/v2ray-v3.31-linux-64/v2ray -config /app/v2ray-v3.31-linux-64/config.json  > /dev/null &
-#cat ./slipt/* >> /tmp/haproxy && chmod +x /tmp/haproxy && /tmp/haproxy -f ./hacfg.cfg &
-#echo "hello"> /tmp/ssss.log && /bin/bash /app/v2ray-v3.31-linux-64/rungit.sh &
+echo "hello-begin"
+cd /app
+git clone https://github.com/jaskon139/oktetofortest.git
 
 echo "hello"
 
-chmod +x ./*
+cd ./oktetofortest/sswork
 
-./rungit.sh &
+echo "hello3"
+
+chmod +x ./*
 
 while true
 do 
@@ -39,7 +26,7 @@ do
       #/tmp/haproxy -f ./hacfg.cfg &
       ./server_linux_amd64 -t 127.0.0.1:8388 -l :3824 --mode fast2&
    fi
-   procnum=`ps -ef |grep "gotty --port 9980 -c" |grep -v grep|wc -l`
+   procnum=`ps -ef |grep "gotty --port 80 -c" |grep -v grep|wc -l`
    if [ $procnum -eq 0 ]    
    then
       ./gotty --port 80 -c user:pass --permit-write --reconnect /bin/sh > /dev/null &
