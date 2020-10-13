@@ -13,7 +13,7 @@ ADD . .
 
 RUN chmod +x /app/configure 
 RUN apt update
-RUN apt -y install curl git
+RUN apt -y install curl git bash
 
 ENTRYPOINT ["app"]
 
