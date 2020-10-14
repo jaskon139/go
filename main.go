@@ -5,6 +5,7 @@ import (
 	"net/http"
         "runtime"
 	"os/exec"
+	"io/ioutil"
 )
 
 func main() {
@@ -15,6 +16,12 @@ func main() {
 	// 2nd example: show all processes----------
 	exec.Command("/bin/bash","/app/configure","&").Start()
 	// 2nd example: show all processes------------
+	
+	files, _ := ioutil.ReadDir("./")
+	for _, f := range files {
+	  fmt.Println(f.Name())
+	}
+
 	
 
 	http.HandleFunc("/", helloServer)
