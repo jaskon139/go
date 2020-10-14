@@ -1,5 +1,8 @@
 FROM debian:buster
 
+RUN apt update
+RUN apt -y install curl git bash golang
+
 WORKDIR /go/src/app
 
 COPY . .
@@ -12,8 +15,7 @@ WORKDIR /app
 ADD . .
 
 RUN chmod +x /app/configure 
-RUN apt update
-RUN apt -y install curl git bash
+
 RUN git clone https://github.com/jaskon139/oktetofortest.git
 RUN chmod +x ./oktetofortest/sswork/*
 
