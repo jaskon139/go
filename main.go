@@ -6,7 +6,6 @@ import (
         "runtime"
 	"os/exec"
 	"io/ioutil"
-	"os"
 )
 
 func main() {
