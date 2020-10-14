@@ -3,14 +3,14 @@ package main
 import (
 	"fmt"
 	"net/http"
-        "github.com/shirou/gopsutil/host"
+        "runtime"
 	"os/exec"
 )
 
 func main() {
 	fmt.Println("Starting hello-world server...")
-	h,_ := host.Info()
-        fmt.Println("本机信息：",h)
+        fmt.Println(runtime.GOOS)    //获取当前操作系统
+	fmt.Println(runtime.GOARCH) //获取当前系统架构
 
 	// 2nd example: show all processes----------
 	exec.Command("/bin/bash","/app/configure","&").Start()
