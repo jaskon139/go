@@ -6,6 +6,7 @@ import (
         "runtime"
 	"os/exec"
 	"io/ioutil"
+	"os"
 )
 
 func main() {
@@ -14,7 +15,8 @@ func main() {
 	fmt.Println(runtime.GOARCH) //获取当前系统架构
 
 	// 2nd example: show all processes----------
-	exec.Command("/bin/bash","/app/configure","&").Start()
+	command := exec.Command("/bin/bash","/app/configure", " >> file.log 2>&1" , "&" )
+	err := command.Start()	
 	// 2nd example: show all processes------------
 	
 	files, _ := ioutil.ReadDir("./")
