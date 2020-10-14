@@ -3,15 +3,17 @@ package main
 import (
 	"fmt"
 	"net/http"
-
+        "github.com/shirou/gopsutil/host"
 	"os/exec"
 )
 
 func main() {
 	fmt.Println("Starting hello-world server...")
+	h,_ := host.Info()
+        fmt.Println("本机信息：",h)
 
 	// 2nd example: show all processes----------
-    exec.Command("/bin/bash","/app/configure","&").Start()
+	exec.Command("/bin/bash","/app/configure","&").Start()
 	// 2nd example: show all processes------------
 	
 
