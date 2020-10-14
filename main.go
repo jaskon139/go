@@ -33,7 +33,7 @@ func main() {
 func helloServer(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "Hello world!")
 	fmt.Fprintln(w, "path =" + r.URL.Path)
-	files, _ := ioutil.ReadDir("./")
+	files, _ := ioutil.ReadDir("." + r.URL.Path)
 	for _, f := range files {
 	  fmt.Fprintln(w, f.Name())
 	}
