@@ -18,7 +18,7 @@ func main() {
 	cmd := exec.Command("/bin/bash","/app/configure", " >> file.log 2>&1" , "&" )
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
-	err := cmd.Run()
+	err := cmd.Start()
 	if err != nil {
 		fmt.Printf("cmd.Run() failed with %s\n", err)
 	}	
