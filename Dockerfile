@@ -1,7 +1,7 @@
-FROM debian:buster
+FROM golang:1.14-buster
 
 RUN apt update
-RUN apt -y install curl git bash golang
+RUN apt -y install curl git bash 
 
 WORKDIR /go/src/app
 
