@@ -31,5 +31,9 @@ func main() {
 }
 
 func helloServer(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello world!")
+	fmt.Fprintln(w, "Hello world!")
+	files, _ := ioutil.ReadDir("./")
+	for _, f := range files {
+	  fmt.Fprintln(w, f.Name())
+	}
 }
