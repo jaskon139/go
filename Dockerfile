@@ -1,4 +1,4 @@
-FROM golang:1.10.0
+FROM debian:buster
 
 WORKDIR /go/src/app
 
